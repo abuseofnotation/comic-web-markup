@@ -1,11 +1,14 @@
-import {isVoiceOver} from './helpers.js'
 const debug = true
 
+export const isVoiceOver = (object) => 
+  (object.name === 'NARRATOR' || object.mood === 'voiceover') 
 
 const isCapitalized = (string) => {
   const stringBeforeBracket = string.split('(')[0]
   return stringBeforeBracket === stringBeforeBracket.toUpperCase()
 }
+
+const normalizeString = (string) => string && string.trim().toLowerCase().replace(' ', '-')
 
 const parseMarkup = (markup, url) => {
   debug && console.log("Parsing Markup", markup)
@@ -18,7 +21,10 @@ const parseMarkup = (markup, url) => {
       if (isCapitalized(line)) {
         objects.push(currentObject)
         let [name, mood] = line.split(/\(|\)/)
-        currentObject = {name: name.trim(), mood: mood && mood.trim()}
+        currentObject = {
+          name: normalizeString(name), 
+          mood: normalizeString(mood),
+        }
       } else {
         currentObject.text = (currentObject.text || []).concat(line)
       }
@@ -36,17 +42,26 @@ const addInfo = (objects) => {
 
   return objects.map((object, i) => {
     let displayText
+    let type
     const index = characters.indexOf(object)
     if (index === -1) {
-      displayText = i === objects.length -1 ? 'bottom' : 'top';
+      if (isVoiceOver) {
+        displayText = i === objects.length -1 ? 'bottom' : 'top';
+        type = 'voicever'
+      } else {
+        type = 'image'
+      }
     } else if (index === 0) {
       displayText = 'start'
+      type = 'character'
     } else if (index === characters.length - 1) {
       displayText = 'end'
+      type = 'character'
     } else {
       displayText = 'middle'
+      type = 'character'
     }
-    return {displayText, ...object}
+    return {type, displayText, ...object}
   })
 } 
 

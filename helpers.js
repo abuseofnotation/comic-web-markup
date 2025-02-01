@@ -1,14 +1,10 @@
-
-export const isVoiceOver = (object) => 
-  (object.name === 'NARRATOR' || object.mood === 'voiceover') 
-
 export const createElement =
-  (type) =>
+  (type, namespace = "http://www.w3.org/2000/svg") =>
   ({ className, text, onClick, disabled, ...props }, children) => {
     //For HTML
     // const div = document.createElement(type);
     // For SVG
-    const el = document.createElementNS("http://www.w3.org/2000/svg", type)
+    const el = document.createElementNS(namespace, type)
     if (className) {
       div.classList.add(className);
     }
@@ -31,6 +27,6 @@ export const createElement =
     return el;
   };
 
-export const maxLength = (list) => 
-  list.reduce((max, str) => parseInt(str.length) > max ? parseInt(str.length) : max, 0)
+export const max = (list) => 
+  list.reduce((max, int) => int > max ? int : max, 0)
 
