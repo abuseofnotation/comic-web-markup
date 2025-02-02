@@ -1,4 +1,4 @@
-import {renderComic} from './index.js'
+import {renderComic} from './lib/index.js'
 
 const panels = 
 Array.prototype.slice.call(document.getElementsByClassName("panel"))
