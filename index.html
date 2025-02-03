@@ -1,89 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comics Markdown</title>
+<title>Comic-Web</title>
 <script type="module" src="plugin.js"></script>
 </head>
 <body>
 
+<h1>Comic-Web</h1>
+
+<p> 
+Comic-web is a markup language for describing comics, as well as a visualizer library for this format.
+</p>
+
 <div>
-<img class="panel" src="./comics/one.svg" alt="
-PROJECTOR
+<pre>
+STUDIO
 
-PRINCESS 
-Behold
-I am the queen of the dirty kingdom!
+JENCEL
+Hi, welcome to Comic-web's readme!
+</pre>
 
-"></img>
+<img class="panel" src="./readme/one.svg" alt="
+STUDIO
 
-<img class="panel" src="./comics/two.svg" alt="
-PROJECTOR
-
-PRINCESS (annoyed)
-Did you hear me?
-
-GOOD-PRINCESS (riding-a-unicorn)
-And I am the queen of the clean kingdom.
+JENCEL
+Hi, welcome to Comic-web's readme!
 
 "></img>
 </div>
 
 
-<div>
-<img class="panel" src="./comics/two.svg" alt="
-PROJECTOR
+<p> 
+It is quite simple, you can understand it in minutes.
+</p>
 
-PRINCESS 
-I will kill you, Love!
+<h2>
+Layers
+</h2>
 
-GOOD-PRINCESS 
-Prince, save me!
-
-"></img>
-
-
-<img class="panel" src="./comics/two.svg" alt="
-PROJECTOR
-
-PRINCESS (annoyed)
-Oh no!
-
-
-PRINCE
-And I am Prince Love, 
-don't you dare come close
-
-GOOD-PRINCESS 
-Save me!
-
-"></img>
-</div>
+Every word that is capitalized and/or followed by a new line signals a layer in the panel.
 
 <div>
-<img class="panel" src="./comics/two.svg" alt="
-PROJECTOR
+<pre>
+MAIN STREET
+</pre>
 
-PRINCE
-Will you marry me, princess?
-
-GOOD-PRINCESS 
-I will.
-
+<img class="panel" src="./readme/two.svg" alt="
+MAIN STREET
 "></img>
-
-<img class="panel" src="./comics/two.svg" alt="
-PROJECTOR
-
-PRINCE
-
-
-GOOD-PRINCESS (bride)
-I do.
-
-"></img>
-
 </div>
-
+<p>
+The visualizer searches an image that goes by the name of the layer in the designited folder, only the file names should be lowercase and use dashes instead of spaces as separators, (so 'MAIN STREET', becomes 'main-street.svg'.
+</p>
 
 </body>
 </html> 
