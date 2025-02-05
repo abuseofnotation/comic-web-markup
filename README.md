@@ -2,16 +2,16 @@ Comic-Web is a lightweight markup language and rendering engine designed for cre
 
 The toolchain includes:
 
-    Markup Language: A straightforward syntax for defining panels, layers, characters, and dialogue.
+- Markup Language: A straightforward syntax for defining panels, layers, characters, and dialogue.
 
-    Rendering Engine: Converts markup into SVG elements, handling layer stacking, character positioning, and speech balloon placement.
+- Rendering Engine: Converts markup into SVG elements, handling layer stacking, character positioning, and speech balloon placement.
 
-    API: A JavaScript function (renderComic) that processes markup and image directories to generate SVG outputs.
+- API: A JavaScript function (renderComic) that processes markup and image directories to generate SVG outputs.
 
-    Plugin: Enables seamless integration into HTML by replacing placeholder images with dynamically rendered panels.
+- Plugin: Enables seamless integration into HTML by replacing placeholder images with dynamically rendered panels.
 
-    Editor: An interactive environment for writing and testing comic scripts in real-time.
+- Editor: An interactive environment for writing and testing comic scripts in real-time.
 
-    Styling: Customizable CSS for controlling the appearance of frames, balloons, and other elements.
+- Styling: Customizable CSS for controlling the appearance of frames, balloons, and other elements.
 
 For more info see https://abuseofnotation.github.io/comic-web-markup
