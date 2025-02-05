@@ -15,13 +15,14 @@ body {
 <h1>Comic-Web</h1>
 
 <p> 
-Comic-web is a <b>markup language</b> for describing comics, as well as a rendering engine for this language.
+Comic-Web is a <b>markup language</b> designed to bring your comic creations to life, and rendering engine for that language.
+
 </p>
 
-<h1>The markup language</h1>
+<h1>The Markup Language</h1>
 
 <p> 
-The Comic-Web markup language is quite simple, you can understand it in minutes.
+The Comic-Web markup language is quite simple, you can master it in minutes.
 </p>  
 
 <figure>
@@ -46,7 +47,9 @@ Hi, welcome to Comic-web's readme!
 Layers
 </h2>
 
-Every word that is capitalized and/or followed by an empty line describes a layer in the panel.
+<p>
+Every capitalized word followed by an empty line defines a layer in your comic panel. 
+</p>
 
 <figure>
 <img class="panel" src="./comic/02.svg" alt="
@@ -58,7 +61,7 @@ THE STUDIO
 </figure>
 
 <p>
-The visualizer searches an image that goes by the name of the layer in the designited folder, only the file names are lowercase and use dashes instead of spaces as separators, (so 'THE STUDIO', becomes 'the-studio.svg'.
+The rendering engine searches for an image matching the layer name in your designated folder. File names are lowercase and use dashes instead of spaces (e.g., 'THE STUDIO' becomes 'the-studio.svg').
 </p>
 
 <h2>
@@ -66,7 +69,7 @@ Stacking
 </h2>
 
 <p>
-Each successive layer goes on top of the last one.
+Each new layer stacks on top of the previous one, allowing you to build complex scenes.
 </p>
 
 <figure>
@@ -81,7 +84,7 @@ A CAT
 </figure>
 
 <p>
-You can stack as many layers as you want, the only thing is that they should be transparent, else they would just overwrite each other.
+You can stack as many layers as you like—just ensure they’re transparent, or they’ll overlap completely.
 </p>
 
 
@@ -90,7 +93,7 @@ Characters
 </h2>
 
 <p>
-When you have a layer line, followed by some other lines that are not set in all-caps (and have no empty line between them), the engine assumes that the layer is a character, and the lines are... their lines.
+When a layer line is followed by non-capitalized lines (without an empty line in between), the engine treats it as a character with dialogue. The character’s image is scaled to make room for their speech bubble.
 </p>
 
 <figure>
@@ -112,7 +115,7 @@ Oh cool, I'm here again.
 </figure>
 
 <p>
-If so, the image (named "jencel.svg" in this case) is scalled a bit, so the text panel is visible.
+In this example, the image "jencel.svg" is scaled slightly to ensure the text panel is visible.
 </p>
 
 <h2>
@@ -120,7 +123,7 @@ Moods
 </h2>
 
 <p>
-To help you organize your files better, the engine supports setting "moods" to characters and other images, by enclosing a mood in brackets, next to the character's name. The location where the engine will search for is "<character_name>/<mood>", so, for example the image below is at "./jencel/sad.svg". If the image doesn't exit, it would render "./jencel.svg".
+Organize your files better by using "moods"! Enclose a mood in brackets next to the character’s name, and the engine will look for the image in the corresponding folder (e.g., "./jencel/sad.svg"). If the mood-specific image isn’t found, it defaults to the base character image.
 </p>
 
 <figure>
@@ -141,24 +144,23 @@ Oh, where did the cat go?
 </figure>
 
 <p>
-The moods can also be a comma-separated list, where the logic is the same: "JENCEL (sad, closeup)" would render "./jencel/sad/closeup.svg". If it doesn't find it, it would render "./jencel/sad.svg" and (if that also doesn't exist, just "./jencel.svg").
+You can even chain moods with a comma-separated list. For example, "JENCEL (sad, closeup)" will search for "./jencel/sad/closeup.svg" before falling back to "./jencel/sad.svg" or "./jencel.svg".
 </p>
  
 
 <p>
-You can understand it better if you
-<a href="https://github.com/abuseofnotation/comic-web-markup/tree/main/comic">check how the folder of this comic is organized</a>
+To see how it all comes together, you can <a href="https://github.com/abuseofnotation/comic-web-markup/tree/main/comic">explore the folder structure of this comic</a>.
 </p>
 
  
 
 
 <h2>
-Stacking characters
+Stacking Characters
 </h2>
 
 <p>
-You can have more than one characters, the engine would do its best to place them and their speech balloons properly.
+Bring multiple characters into the scene, and the engine will automatically position them and their speech bubbles for maximum impact.
 </p>
 
 <figure>
@@ -195,17 +197,16 @@ Shhh, it's out of frame.
 </figure>
 
 <p>
-When there are more than one character, the engine places the characters and the speech balloons next to each other, according to the way they are defined.
+The engine arranges characters and their dialogue based on the order they’re defined.
 </p>
 
-
-
 <h2>
-Stacking characters CONTD
+Stacking Characters CONTD
 </h2>
 
 <p>
-You can have many characters on-screen and there isn't any special way to describe characters, any image can be a character.
+You can have as many characters as you want and there isn't any special way to describe characters, any image can be a character.
+
 </p>
 
 <figure>
@@ -244,19 +245,20 @@ Meowww!
 </figure>
 
 <p>
-The way that the characters are arranged corresponds to their lines.
+The arrangement of characters corresponds to their dialogue.
 </p>
 
 <h2>
-Narrators and off-screen dialogue
+Narrators and Off-Screen Dialogue
 </h2>
 
 <p>
-There is a special 'NARRATOR' character who is always off screen. 
+  For off-screen dialogue, use the "off-screen" mood to keep characters out of the frame while still letting them speak.
+ 
 </p>
 
 <p>
-And, if you want to have some of the regular characters talking off-screen, there is also a special "off-screen" mood which won't render anything.
+ The special 'NARRATOR' character is always off-screen, and their dialogue appears at the top or bottom of the panel, just like in traditional comics.
 </p>
 
 <figure>
@@ -296,22 +298,17 @@ He wasn't...
 </figure>
 
 <p>
-The narrator's lines are always rendered at the top and bottom of the panel, as is customary for comics.
+
 </p>
 
 
 <h2>
-Custom images
+Custom Images
 </h2>
 
 <p>
-If you don't want to use the rendering engine for some panel, you can always paint a whole complete panel and include it.
+If you want, you can always include a fully custom-drawn panel. And if you want to mix custom artwork with Comic-Web’s speech balloons, simply use the "off-screen" mood for characters.
 </p>
-
-<p>
-And if you want to draw a custom panel, but still use the speech balloons, you can make use of the "off-screen" mood.
-</p>
-
 
 <figure>
 <img class="panel" src="./comic/06.svg" alt="
@@ -340,53 +337,53 @@ Love you, see you in the next section.
 </pre>
 </figure>
 
-<h1>The toolchain</h1>
+<h1>The Toolchain</h1>
 <p>
-So, you know about the markup, not let's find out how can we use it.
+Now that you’ve mastered the markup, let’s dive into how you can use it to bring your comics to life.
 </p>
 
 <h2>The API</h2>
 <p>
-The API of Comic Web is exported by <b>lib/index.js</b> and currently it consists of a single JavaScript function, called <b>renderComic</b> accepting a string containing a description of the panel in the format that we described and a directory, where the images are stored. The function returns an SVG DOM element, with the panel. 
+Comic-Web’s API, found in <b>lib/index.js</b>, is simple. It features a single JavaScript function, <b>renderComic</b>, which takes a string of panel descriptions and a directory of images. It returns an SVG DOM element, ready to be displayed in your page.
 </p>
 
-<h2>The plugin</h2>
+<h2>The Plugin</h2>
 <p>
-The plugin is the principal way of using the markup. Basically it consists of the following steps:
+The plugin is the easiest way to integrate Comic-Web into your HTML pages. Here’s how it works:
 </p>
 <p>
-Include the plugin file in your HTML page.
+1. Include the plugin file in your HTML page:
 </p>
 <pre>
-<script type="module" src="plugin.js"></script>
+&lt;script type=&quot;module&quot; src=&quot;plugin.js&quot;&gt;&lt;/script&gt;
 </pre>
 
 <p>
-In the file, insert an image, leading to a non-existent link in your images dir, and put the script in the alt-text property.
+2. Insert an image with a non-existent link in your images directory, and place the script in the <b>alt-text</b> property:
 </p>
 <pre>
-<img class="panel" src="./comic/01.svg" alt="
+&lt;img class=&quot;panel&quot; src=&quot;./comic/01.svg&quot; alt=&quot;
 THE STUDIO
 
 JENCEL (happy)
 Hi, welcome to Comic-web's readme!
 I am Jencel, creator of this format.
 
-"></img>
+&quot;&gt;&lt;/img&gt;
 </pre>
 <p>
-The plugin would generate a panel in the place of the image.
+The plugin will automatically generate a panel in place of the image.
 </p>
 
 <h2>Editor</h2>
 <p>
-This is an interactive environment for writing comics.
-<p><a href="editor.html">Try it out</a></p>
+Looking for an interactive way to create your comics? Try the Comic-Web editor—it’s the perfect playground for experimenting with your ideas.
+<p><a href="editor.html">Give it a try!</a></p>
 </p>
 
 <h2>Styling</h2>
 <p>
-Besides the images, the engine also embeds a <b>style.css</b> file into all images. This file is used for styling the frames, balloons etc.
+Comic-Web also includes a <b>style.css</b> file, embedded into all generated images. This file controls the appearance of frames, speech balloons, and more.
 </p>
 
 </body>
