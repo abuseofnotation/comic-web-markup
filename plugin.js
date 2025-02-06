@@ -9,7 +9,6 @@ panels.forEach((panel) => {
     panel.replaceWith(svgPanel)
   } else {
   panel.addEventListener('error', () => {
-    console.log({urlDir})
     const svgPanel= renderComic(panel.alt, urlDir)
     panel.replaceWith(svgPanel)
   });
