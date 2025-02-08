@@ -11,6 +11,7 @@ panels.forEach((panel) => {
   const fileType = imageConfig.fileType || config.fileType || panel.src.split('.')[1]
   const width = imageConfig.width || config.width || 500
   const height = imageConfig.height || config.height || 500
+
   const comic = () => renderComic(panel.alt, {urlDir, fileType, width, height})
 
   if (panel.height < 100) { // When the image isn't loaded
