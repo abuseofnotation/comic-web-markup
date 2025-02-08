@@ -2,7 +2,15 @@
 <html>
 <head>
 <title>Comic-Web</title>
-<script type="module" src="plugin.js"></script>
+<script 
+  id="comic-web" 
+  type="module" 
+  src="plugin.js"
+  data-url-dir="./comic"
+  data-file-type="svg"
+  data-width="500"
+  data-height="500"
+  ></script>
 <style>
 body {
   font-family: sans-serif;
@@ -26,7 +34,7 @@ The Comic-Web markup language is quite simple, you can master it in minutes.
 </p>  
 
 <figure>
-<img class="panel" src="./comic/01.svg" alt="
+<img class="comic-web-panel" src="./comic/01.svg" alt="
 THE STUDIO
 
 JENCEL (happy)
@@ -52,7 +60,7 @@ Every capitalized word followed by an empty line defines a layer in your comic p
 </p>
 
 <figure>
-<img class="panel" src="./comic/02.svg" alt="
+<img class="comic-web-panel" src="./comic/02.svg" alt="
 THE STUDIO
 "></img>
 <pre>
@@ -73,7 +81,7 @@ Each new layer stacks on top of the previous one, allowing you to build complex 
 </p>
 
 <figure>
-<img class="panel" src="./comic/03.svg" alt="
+<img class="comic-web-panel" src="./comic/03.svg" alt="
 THE STUDIO
 A CAT
 "></img>
@@ -97,7 +105,7 @@ When a layer line is followed by non-capitalized lines (without an empty line in
 </p>
 
 <figure>
-<img class="panel" src="./comic/04.svg" alt="
+<img class="comic-web-panel" src="./comic/04.svg" alt="
 THE STUDIO
 
 A CAT
@@ -127,7 +135,7 @@ Organize your files better by using "moods"! Enclose a mood in brackets next to 
 </p>
 
 <figure>
-<img class="panel" src="./comic/06.svg" alt="
+<img class="comic-web-panel" src="./comic/06.svg" alt="
 THE STUDIO
 
 JENCEL (sad)
@@ -164,7 +172,7 @@ Bring multiple characters into the scene, and the engine will automatically posi
 </p>
 
 <figure>
-<img class="panel" src="./comic/04.svg" alt="
+<img class="comic-web-panel" src="./comic/04.svg" alt="
 THE STUDIO
 
 A CAT
@@ -210,7 +218,7 @@ You can have as many characters as you want and there isn't any special way to d
 </p>
 
 <figure>
-<img class="panel" src="./comic/05.svg" alt="
+<img class="comic-web-panel" src="./comic/05.svg" alt="
 THE STUDIO
 
 JENCEL
@@ -224,7 +232,6 @@ Hi.
 
 A CAT
 Meowww!
-
 "></img>
 <pre>
 THE STUDIO
@@ -262,7 +269,7 @@ Narrators and Off-Screen Dialogue
 </p>
 
 <figure>
-<img class="panel" src="./comic/06.svg" alt="
+<img class="comic-web-panel" src="./comic/06.svg" alt="
 THE STUDIO
 
 NARRATOR
@@ -311,7 +318,7 @@ If you want, you can always include a fully custom-drawn panel. And if you want 
 </p>
 
 <figure>
-<img class="panel" src="./comic/06.svg" alt="
+<img class="comic-web-panel" src="./comic/06.svg" alt="
 The studio
 
 Jencel and Alyssa hugging
@@ -352,17 +359,25 @@ Comic-Web’s API, found in <b>lib/index.js</b>, is simple. It features a single
 The plugin is the easiest way to integrate Comic-Web into your HTML pages. Here’s how it works:
 </p>
 <p>
-1. Include the plugin file in your HTML page:
+1. Include the plugin file in your HTML page, like this. The data attribute allows you to configure the URL directory where you store your images, as well as some other parameters.
 </p>
 <pre>
-&lt;script type=&quot;module&quot; src=&quot;plugin.js&quot;&gt;&lt;/script&gt;
+&lt;script 
+  id="comic-web" 
+  type="module" 
+  src="https://abuseofnotation.github.io/comic-web-markup/plugin.js"
+  data-url-dir="./comic"
+  data-file-type="svg"
+  data-width="500"
+  data-height="500"
+&gt;&lt;/script&gt;
 </pre>
 
 <p>
-2. Insert an image with a non-existent link in your images directory, and place the script in the <b>alt-text</b> property:
+2. Insert an image with class <b>comic-web-panel</b>, and place the script in the <b>alt-text</b> property (the src can be empty, or can point to a non-existent filename, if you want to generate it):
 </p>
 <pre>
-&lt;img class=&quot;panel&quot; src=&quot;./comic/01.svg&quot; alt=&quot;
+&lt;img class=&quot;comic-web-panel&quot; src=&quot;./comic/01.svg&quot; alt=&quot;
 THE STUDIO
 
 JENCEL (happy)
