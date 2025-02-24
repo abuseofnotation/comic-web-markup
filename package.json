@@ -1,0 +1,31 @@
+{
+  "name": "comic-web-markup",
+  "version": "1.0.0",
+  "description": "Comic-Web is a markup language designed to bring your comic creations to life, and rendering engine for that language. ",
+  "main": "bin/index.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abuseofnotation/webcomic-script.git"
+  },
+  "keywords": [
+    "markup"
+  ],
+  "author": "Jencel P",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abuseofnotation/webcomic-script/issues"
+  },
+  "homepage": "https://github.com/abuseofnotation/webcomic-script#readme",
+  "dependencies": {
+    "jsdom": "^26.0.0",
+    "puppeteer": "^24.2.1",
+    "sharp": "^0.33.5"
+  }
+}
